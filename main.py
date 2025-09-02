@@ -16,7 +16,7 @@ with open('config.json', 'r') as c:
 local_server = True
 app = Flask(__name__)
 
-app.secret_key = 'aditi-2109'
+app.secret_key = 'dhruv-2109'
 
 app.config['UPLOAD_FOLDER'] = params['upload_location']
 
