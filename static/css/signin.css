@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  max-width: 330px;
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: auto;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-bottom: 8px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin: 0 8px;
+  color: #333;
+  text-decoration: none;
+}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image:url('{{ url_for('static',filename= 'assets/img/home-bg.jpg' ) }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panal</h1>
+                            <span class="subheading">Manage your post and change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+
+             <h1>Basic Actions</h1>    
+             
+            <a  button class = "btn btn primary"><a href = "/dashboard">Dashboard Home</button> </a>
+            <a  button class = "btn btn primary"><a href = "/logout">Logout</button> </a>
+            <hr>
+                           
+<h1>Add/Edit Post</h1>
+
+   <form id="contactForm" action = "/Edit/{{S_no}}" method = "post" data-sb-form-api-token="API_TOKEN">
+                                <div class="form-floating">
+                                    <input class="form-control" id="tittle" name = 'tittle' type="text" placeholder="Enter your tittle..." data-sb-validations="required" value = "{{post.Tittle}}"/>
+                                    <label for="name">Tittle</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A tittle is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="subtittle" type="text" name = 'subtittle' placeholder="Enter your tagline..." data-sb-validations="required,email" value = "{{post.Subtittle}}"/>
+                                    <label for="email">Subtittle</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">A Subtittle is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email"></div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="slug" name = 'slug' type="text" placeholder="Enter your phone number..."  data-sb-validations="required" value = "{{post.Slug}}" />
+                                    <label for="phone">Slug</label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A Slug to be filled.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="content" name = 'content' placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required" >{{post.Content}}</textarea>
+                                    <label for="message">Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A content is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="img_file" name = 'img_file'  type='file' placeholder="Enter your image..." style="height: 12rem" data-sb-validations="required" value = "{{post.Img_file}}" >
+                                    <label for="message">Image file </label>
+                                    <div class="invalid-feedback" ></div>
+                                </div>
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Send</button>
+                            </form>
+                        
+
+
+  </tbody>
+</table>
+
+
+                    
+
+                 
+
+                </div>
+            </div>
+        </div>
+        {% endblock %}
